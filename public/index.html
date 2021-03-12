@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+  <style>
+  *{
+    padding:0px;
+    margin:0px;
+  }
+  body{
+		padding-top:10%;
+    width:50%;
+		margin:auto;
+		overflow:wrap;
+  }
+	
+
+	ul{
+		padding-left:2em;
+	}
+
+	form{
+		padding:1em;
+	}
+
+
+  </style>
+  <script src="libraries/p5.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="sketch.js"></script>
+</head>
+<body>
+<h2>To Do:</h2><br>
+<ul id="big_list">
+</ul>
+	<form>
+		<input type="text" id="input_field" maxlength="100" >
+		<input type="button" id="button" value="Add" onclick="buttonclick()">
+	</form>
+</body>
+</html>
