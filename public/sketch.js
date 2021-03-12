@@ -3,7 +3,7 @@
 		let socket;
 
 
-		socket = io.connect('');
+		socket = io.connect('https://to-do-to-do.herokuapp.com/');
 
 		socket.on('connect',()=>{
 			socket.emit('request_list',socket.id);
