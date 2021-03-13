@@ -1,5 +1,8 @@
+var fs = require('fs');
 
-var list = [];
+var data = fs.readFileSync('list.json');
+var list = JSON.parse(data);
+console.log(list);
 
 var express = require('express');
 var app = express();
@@ -25,9 +28,18 @@ io.sockets.on('connection',(socket)=>{
 	});
 
 	socket.on('submit_item',(data)=>{
-		list.push(data);
-		console.log(list);
+
 		io.sockets.emit('update_list',data);
+		list.push(data);
+
+		let save = JSON.stringify(list,null,2);
+		fs.writeFile('list.json',save, finished);
+
 		console.log("list update to all");
+		console.log(list);
 	});
 });
+
+function finished(){
+	console.log("list file updated");
+}

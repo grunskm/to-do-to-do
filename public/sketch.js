@@ -3,7 +3,8 @@
 		let socket;
 
 
-		socket = io.connect('https://to-do-to-do.herokuapp.com/');
+ 		socket = io.connect('https://to-do-to-do.herokuapp.com/');
+// 		socket = io.connect('https://localhost:3000/');
 
 		socket.on('connect',()=>{
 			socket.emit('request_list',socket.id);
